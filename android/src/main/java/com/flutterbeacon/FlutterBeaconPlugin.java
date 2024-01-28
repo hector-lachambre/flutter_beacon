@@ -169,12 +169,8 @@ public class FlutterBeaconPlugin implements FlutterPlugin, ActivityAware, Method
     }
 
     if (call.method.equals("initializeAndCheck")) {
-      initializeAndCheck(result);
-      return;
-    }
-
-    if (call.method.equals("setArmaFilter")) {
       BeaconManager.setRssiFilterImplClass(ArmaRssiFilter.class);
+      initializeAndCheck(result);
       return;
     }
 
