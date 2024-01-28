@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 
 import org.altbeacon.beacon.BeaconManager;
 import org.altbeacon.beacon.BeaconParser;
+import org.altbeacon.beacon.service.ArmaRssiFilter;
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.embedding.engine.plugins.activity.ActivityAware;
@@ -173,7 +174,7 @@ public class FlutterBeaconPlugin implements FlutterPlugin, ActivityAware, Method
     }
 
     if (call.method.equals("setArmaFilter")) {
-      this.beaconManager.setRssiFilterImplClass(ArmaRssiFilter.class);
+      BeaconManager.setRssiFilterImplClass(ArmaRssiFilter.class);
     }
 
     if (call.method.equals("setScanPeriod")) {
