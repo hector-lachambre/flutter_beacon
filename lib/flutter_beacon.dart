@@ -86,6 +86,10 @@ class FlutterBeacon {
     return result == 1;
   }
 
+  Future<void> setArmaFilter() async {
+    await _methodChannel.invokeMethod('setArmaFilter');
+  }
+
   /// Set the default AuthorizationStatus to use in requesting location authorization.
   /// For iOS, this can be either [AuthorizationStatus.whenInUse] or [AuthorizationStatus.always].
   /// For Android, this is not used.
