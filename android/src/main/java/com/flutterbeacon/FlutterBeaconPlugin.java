@@ -172,6 +172,10 @@ public class FlutterBeaconPlugin implements FlutterPlugin, ActivityAware, Method
       return;
     }
 
+    if (call.method.equals("setArmaFilter")) {
+      this.beaconManager.setRssiFilterImplClass(ArmaRssiFilter.class);
+    }
+
     if (call.method.equals("setScanPeriod")) {
       int scanPeriod = call.argument("scanPeriod");
       this.beaconManager.setForegroundScanPeriod(scanPeriod);
