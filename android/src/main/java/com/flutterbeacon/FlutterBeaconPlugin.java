@@ -169,7 +169,7 @@ public class FlutterBeaconPlugin implements FlutterPlugin, ActivityAware, Method
     }
 
     if (call.method.equals("initializeAndCheck")) {
-      ArmaRssiFilter.setDEFAULT_ARMA_SPEED(0.5);
+      ArmaRssiFilter.setDEFAULT_ARMA_SPEED(1);
       BeaconManager.setRssiFilterImplClass(ArmaRssiFilter.class);
       initializeAndCheck(result);
       return;
